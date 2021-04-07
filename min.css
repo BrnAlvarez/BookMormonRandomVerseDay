@@ -12,16 +12,8 @@ body, html {
     -moz-background-size: cover; /* Mozilla*/
     -o-background-size: cover; /* Opera*/
     background-size: cover; /* Generic*/
-    /* background-position: 50% 1%; */
     height: 100%;
   }
-  /* html { 
-    background: url(images/bg.jpg) no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;contain
-    -o-background-size: cover;
-    background-size: cover;
-  } */
   .verse-bg {
     background: rgba(20, 20, 20, 0.5);
     font-family: "Copperplate";
@@ -36,11 +28,11 @@ body, html {
     color: rgba(255, 255, 255, 0.9);
     text-align: center;
     font-size: 3em;
-    /* padding-top: 4%;
+    padding-top: 4%;
     padding-bottom: 4%;
     padding-left: 2%;
     padding-right: 2px;
-    border-top: 50%; */
+    border-top: 50%;
     line-height: 110%;
   }
   
