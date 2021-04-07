@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="min.css" type="text/css" rel="stylesheet">
+    <link href="../../bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <script src="../../jquery-3.6.0.min.js"></script>
+    <script src="../../bootstrap/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="background-ima">
+        <div class="container">
+            <div class="row">
+                <div class="col-8 offset-2">
+                    <div class="verse-bg" id="verse-bg">
+                        <p class="verse" id="verse">
+
+                        </p>
+                    </div>
+                    <p class="verse-info" id="verse-info">
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function readTextFile(file, callback) {
+            var rawFile = new XMLHttpRequest();
+            rawFile.overrideMimeType("application/json");
+            rawFile.open("GET", file, true);
+            rawFile.onreadystatechange = function () {
+                if (rawFile.readyState === 4 && rawFile.status == "200") {
+                    callback(rawFile.responseText);
+                }
+            }
+            rawFile.send(null);
+        }
+
+        function pickRandomText() {
+            var obj_keys = Object.keys(window.getTemp);
+            var ran_key = obj_keys[Math.floor(Math.random() * obj_keys.length)];
+            // console.log(ran_key);//First Key get number
+            window.getTemp = window.getTemp[ran_key]; //Get book with id get First key
+            // console.log(window.getTemp);
+            var obj_keys = Object.keys(window.getTemp.chapters);
+            var ran_key = obj_keys[Math.floor(Math.random() * obj_keys.length)];
+            window.getTemp = window.getTemp.chapters[ran_key];
+            var obj_keys = Object.keys(window.getTemp.verses);
+            var ran_key = obj_keys[Math.floor(Math.random() * obj_keys.length)];
+            window.getTemp = window.getTemp.verses[ran_key];
+
+            // document.querySelector('#verse').innerHTML =
+            document.querySelector('#verse').innerHTML = window.getTemp.text;
+            document.querySelector('#verse-info').innerHTML = window.getTemp.reference;// + " " + window.getTemp.verse;
+        }
+    </script>
+    <script>
+
+        //usage:
+        readTextFile("book-of-mormon.json", function (text) {
+            window.getTemp = JSON.parse(text).books;
+            pickRandomText();
+
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+body, html {
+    height: 100%;
+    margin: 0;
+  }
+.background-ima {
+    background: url("descarga.jpg")
+      no-repeat center center fixed
+      rgb(34, 24, 24);
+      backdrop-filter: blur(46px);
+    opacity:4;
+    -webkit-background-size: cover; /* For WebKit*/
+    -moz-background-size: cover; /* Mozilla*/
+    -o-background-size: cover; /* Opera*/
+    background-size: cover; /* Generic*/
+    /* background-position: 50% 1%; */
+    height: 100%;
+  }
+  /* html { 
+    background: url(images/bg.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;contain
+    -o-background-size: cover;
+    background-size: cover;
+  } */
+  .verse-bg {
+    background: rgba(20, 20, 20, 0.5);
+    font-family: "Copperplate";
+    border-radius: 15px;
+    max-height: 80vh;
+    overflow: hidden;
+    margin-top:10%;
+    /* font-style: italic; */
+  }
+  
+  .verse {
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    font-size: 3em;
+    /* padding-top: 4%;
+    padding-bottom: 4%;
+    padding-left: 2%;
+    padding-right: 2px;
+    border-top: 50%; */
+    line-height: 110%;
+  }
+  
+  .verse-info {
+    color: rgba(255, 255, 255, 0.9);
+    text-align: right;
+    font-size: 2em;
+    padding-top: 2%;
+    padding-right: 3%;
+  }
